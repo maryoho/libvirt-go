@@ -2304,7 +2304,7 @@ func (d *Domain) BlockRebase(disk string, base string, bandwidth uint64, flags D
 	defer C.free(unsafe.Pointer(cdisk))
 	var cbase *C.char
 	if base != "" {
-		cbase := C.CString(base)
+		cbase = C.CString(base)
 		defer C.free(unsafe.Pointer(cbase))
 	}
 	var err C.virError
